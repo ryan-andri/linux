@@ -185,6 +185,7 @@ static unsigned int get_next_freq(struct sugov_policy *sg_policy,
 
 #ifdef CONFIG_SCHED_MUQSS
 #define rt_rq_runnable(rq_rt) rt_rq_is_runnable(rq)
+#define uclamp_is_used() IS_BUILTIN(CONFIG_UCLAMP_TASK)
 #else
 #define rt_rq_runnable(rq_rt) rt_rq_is_runnable(&rq->rt)
 #endif
